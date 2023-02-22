@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "15fff6ba-db00-4f03-aa6a-d523e3d2a266",
+		"name": "Ntdata-student-gencat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25852416"
+	},
+	"item": [
+		{
+			"name": "Get Students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () { \r",
+							"    pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nttdata-firstapi-pablo.azurewebsites.net/api/Student",
+					"protocol": "https",
+					"host": [
+						"nttdata-firstapi-pablo",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () { \r",
+							"    pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":0,\r\n    \"name\":\"Pepe\",\r\n    \"surname\": \"Gencat\",\r\n    \"age\":33\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Student",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Student"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://nttdata-firstapi-pablo.azurewebsites.net"
+		}
+	]
+}
